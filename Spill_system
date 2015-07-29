@@ -1,0 +1,33 @@
+
+#include <Servo.h>
+
+Servo myServo;
+
+int Switchstate = 0;
+
+
+void setup() {
+
+  myServo.attach (9);
+  pinMode (2,INPUT);
+  
+  
+}
+
+void loop() {
+
+  Switchstate = digitalRead (2);
+  
+  if (Switchstate == HIGH){
+    
+    myServo.write (90);
+    
+  }else {
+    
+    myServo.write (0);
+  }
+   
+   delay (15); 
+    
+  
+}
